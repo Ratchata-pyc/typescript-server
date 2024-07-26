@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Todo {
+  id       Int      @id @default(autoincrement())
+  title    String
+  isDone   Boolean  @default(false) @map("is done")
+  createAt DateTime @default(now()) @map("create_at")
+}
