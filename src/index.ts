@@ -18,7 +18,6 @@
 // const port = process.env.PORT;
 // app.listen(port, () => // console.log(`Server is running on port ${port}`));
 
-// src/index.ts
 import express from "express";
 import cors from "cors";
 import notFoundHandler from "./middlewares/notFound";
@@ -30,7 +29,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/todos", todoRoutes);
+app.use("/todo", todoRoutes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
